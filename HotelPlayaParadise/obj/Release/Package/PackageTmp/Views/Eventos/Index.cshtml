@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Eventos>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+<div style="margin-top:2100px;">
+    <h2>Listado de Eventos</h2>
+    <link rel="stylesheet" href="~/css/StyleLink.css">
+    <link rel="stylesheet" href="~/css/StyleTables.css">
+    <link rel="stylesheet" href="~/css/StyleSummitButton.css">
+
+    <a href="@Url.Action("Create", "Eventos")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+        Crear Nuevo
+    </a>
+    <table class="styled-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Evento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Evento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.ActionButton("Editar", "Edit", "Eventos", new { id = item.Evento_ID }, new { @class = "btnC" }) |
+                    <a href="@Url.Action("Details", "Eventos", new { id = item.Evento_ID })" class="btngreen" style="text-decoration: none; color:green">
+                        Detalles
+                    </a> |
+                    @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                    @Html.ActionButton("Eliminar", "Delete", "Eventos", new { id = item.Evento_ID }, new { @class = "btnD" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

@@ -1,0 +1,160 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #555555; /* Texto plomo */
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: #555555; /* Texto plomo */
+}
+
+    .nav-link:hover {
+        color: #000000 !important; /* Texto negro al pasar el cursor */
+    }
+
+.icon {
+    transition: color 0.3s ease;
+    color: #555555; /* Iconos plomos */
+}
+
+    .icon:hover {
+        color: #000000 !important; /* Iconos negros al pasar el cursor */
+    }
+
+/* Estilos para el menú lateral */
+.sb-sidenav {
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+    .sb-sidenav .nav-link {
+        color: #555555; /* Texto plomo */
+    }
+
+        .sb-sidenav .nav-link:hover {
+            color: #000000; /* Texto negro al pasar el cursor */
+        }
+
+    .sb-sidenav .sb-sidenav-menu-heading {
+        color: #555555; /* Texto plomo */
+        font-weight: 600;
+    }
+
+/* Estilos para el pie de página */
+footer {
+    position: relative;
+    height: 150px;
+    background: #ffffff; /* Fondo blanco */
+}
+
+    footer .wave {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background-repeat: repeat-x;
+        bottom: 0;
+    }
+
+    footer .wave1 {
+        background-image: url('path_to_wave_image1.png');
+        animation: animate 30s linear infinite;
+        z-index: 1000;
+    }
+
+    footer .wave2 {
+        background-image: url('path_to_wave_image2.png');
+        animation: animate 15s linear infinite;
+        z-index: 999;
+    }
+
+    footer .wave3 {
+        background-image: url('path_to_wave_image3.png');
+        animation: animate 10s linear infinite;
+        z-index: 998;
+    }
+
+    footer .wave4 {
+        background-image: url('path_to_wave_image4.png');
+        animation: animate 5s linear infinite;
+        z-index: 997;
+    }
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Estilos para la barra de navegación personalizada */
+.navbar-custom {
+    background-color: #1358ab; /* Celeste-NavBar */
+    padding: 10px 20px;
+}
+
+    .navbar-custom .navbar-brand {
+        font-family: 'Arial', sans-serif;
+        font-size: 24px;
+        color: #000000; /* Texto negro */
+        font-weight: bold;
+    }
+
+        .navbar-custom .navbar-brand:hover {
+            color: black; /* Texto dorado al pasar el cursor */
+        }
+
+    .navbar-custom .nav-link {
+        color: #000000; /* Texto negro */
+        font-size: 16px;
+    }
+
+        .navbar-custom .nav-link:hover {
+            color: #104E8B; /* Texto dorado al pasar el cursor */
+        }
+
+    .navbar-custom .icon {
+        transition: color 0.3s ease;
+        color: #000000; /* Iconos negros */
+    }
+
+        .navbar-custom .icon:hover {
+            color: #104E8B; /* Iconos dorados al pasar el cursor */
+        }
+
+/* Estilos para el diseño del layout */
+#layoutSidenav {
+    display: flex;
+}
+
+#layoutSidenav_nav {
+    width: 250px;
+    background-color: #3673c5; /* NavBar */
+}
+
+#layoutSidenav_content {
+    flex-grow: 1;
+}
+
+/* Estilos para el menú lateral oscuro */
+.sb-sidenav-dark .sb-sidenav-menu {
+    background-color: #3673c5; /* Fondo blanco */
+}
+
+    .sb-sidenav-dark .sb-sidenav-menu .nav-link {
+        color: white; /* Texto plomo */
+    }
+
+        .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+            color: black; /* Color diferente al negro al pasar el mouse */
+        }

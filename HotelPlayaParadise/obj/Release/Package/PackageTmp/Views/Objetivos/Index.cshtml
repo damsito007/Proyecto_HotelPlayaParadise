@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Objetivo>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Objetivos</h2>
+
+<link rel="stylesheet" href="~/css/StyleLink.css">
+<link rel="stylesheet" href="~/css/StyleTables.css">
+<link rel="stylesheet" href="~/css/StyleSummitButton.css">
+<a href="@Url.Action("Create", "Objetivos")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+    Crear Nuevo
+</a>
+<table class="styled-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metrica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ponderacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMI.Nombre)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Indicadors.Nombre)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Perspectiva.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metrica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ponderacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMI.Nombre)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Indicador.Nombre)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Perspectiva.Nombre)
+            </td>
+            <td>
+                @Html.ActionButton("Editar", "Edit", "Objetivos", new { id = item.Id }, new { @class = "btnC" }) |
+                <a href="@Url.Action("Details", "Objetivos", new { id = item.Id })" class="btngreen" style="text-decoration: none; color:green">
+                    Detalles
+                </a> |
+                @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                @Html.ActionButton("Eliminar", "Delete", "Objetivos", new { id = item.Id }, new { @class = "btnD" })
+
+            </td>
+        </tr>
+    }
+
+</table>

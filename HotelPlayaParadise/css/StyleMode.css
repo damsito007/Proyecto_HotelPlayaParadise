@@ -1,0 +1,23 @@
+﻿/* Definición de variables para colores claros */
+:root {
+    --background-color-light: #ffffff;
+    --text-color-light: #000000;
+}
+
+/* Estilos para el modo claro */
+body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+/* Definición de variables para colores oscuros */
+.dark-mode {
+    --background-color-dark: #333333;
+    --text-color-dark: #ffffff;
+}
+
+    /* Estilos para el modo oscuro */
+    .dark-mode body {
+        background-color: var(--background-color-dark);
+        color: var(--text-color-dark);
+    }

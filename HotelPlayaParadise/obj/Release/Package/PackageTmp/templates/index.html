@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Actividades Hotel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Análisis de Actividades Hotel</h1>
+
+        <div class="my-4">
+            <h2>Total recaudación por Tipo de Habitación</h2>
+            <img src="data:image/png;base64,{{ img1 }}" class="img-fluid" alt="Total recaudación por Tipo de Habitación">
+        </div>
+
+        <div class="my-4">
+            <h2>Distribución de Métodos de Pago</h2>
+            <img src="data:image/png;base64,{{ img2 }}" class="img-fluid" alt="Distribución de Métodos de Pago">
+        </div>
+
+        <div class="my-4">
+            <h2>Distribución de Totales</h2>
+            <img src="data:image/png;base64,{{ img3 }}" class="img-fluid" alt="Distribución de Totales">
+        </div>
+
+        <div class="my-4">
+            <h2>Distribución del Costo Total por Tipo de Habitación</h2>
+            <img src="data:image/png;base64,{{ img4 }}" class="img-fluid" alt="Distribución del Costo Total por Tipo de Habitación">
+        </div>
+
+        <div class="my-4">
+            <h2>Tabla de Contingencia entre Tipo de Habitación y Nacionalidad</h2>
+            <img src="data:image/png;base64,{{ img5 }}" class="img-fluid" alt="Tabla de Contingencia entre Tipo de Habitación y Nacionalidad">
+        </div>
+
+        <div class="my-4">
+            <h2>Primeras Filas del DataFrame</h2>
+            <div class="table-responsive">
+                {{ df_html | safe }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

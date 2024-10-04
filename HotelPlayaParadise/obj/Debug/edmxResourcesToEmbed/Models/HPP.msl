@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloHPPStoreContainer" CdmEntityContainer="HPPContainer">
+    <EntitySetMapping Name="Actividades_Empleados">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Actividades_Empleados)">
+        <MappingFragment StoreEntitySet="Actividades_Empleados">
+          <ScalarProperty Name="Actividad_ID" ColumnName="Actividad_ID" />
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check_in_Out">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Check_in_Out)">
+        <MappingFragment StoreEntitySet="Check_in_Out">
+          <ScalarProperty Name="Check_in_Out_ID" ColumnName="Check_in_Out_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Fecha_Check_in" ColumnName="Fecha_Check_in" />
+          <ScalarProperty Name="Fecha_Check_out" ColumnName="Fecha_Check_out" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Clientes)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Tipo_Cliente" ColumnName="Tipo_Cliente" />
+          <ScalarProperty Name="Metodo_Reservacion" ColumnName="Metodo_Reservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentarios_Valoraciones_Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Comentarios_Valoraciones_Clientes)">
+        <MappingFragment StoreEntitySet="Comentarios_Valoraciones_Clientes">
+          <ScalarProperty Name="Comentario_ID" ColumnName="Comentario_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras_Servicios_Adicionales">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Compras_Servicios_Adicionales)">
+        <MappingFragment StoreEntitySet="Compras_Servicios_Adicionales">
+          <ScalarProperty Name="Compra_Servicio_ID" ColumnName="Compra_Servicio_ID" />
+          <ScalarProperty Name="Reservacion_ID" ColumnName="Reservacion_ID" />
+          <ScalarProperty Name="Servicio_ID" ColumnName="Servicio_ID" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Empleados)">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Facturas)">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="Factura_ID" ColumnName="Factura_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Factura" ColumnName="Fecha_Factura" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Habitaciones)">
+        <MappingFragment StoreEntitySet="Habitaciones">
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Tipo_Habitacion" ColumnName="Tipo_Habitacion" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+          <ScalarProperty Name="Precio_Noche" ColumnName="Precio_Noche" />
+          <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Intermediarios">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Intermediarios)">
+        <MappingFragment StoreEntitySet="Intermediarios">
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo_Intermediario" ColumnName="Tipo_Intermediario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paquetes">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Paquetes)">
+        <MappingFragment StoreEntitySet="Paquetes">
+          <ScalarProperty Name="Paquete_ID" ColumnName="Paquete_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promociones">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Promociones)">
+        <MappingFragment StoreEntitySet="Promociones">
+          <ScalarProperty Name="Promocion_ID" ColumnName="Promocion_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Acceso_Hotel">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Registros_Acceso_Hotel)">
+        <MappingFragment StoreEntitySet="Registros_Acceso_Hotel">
+          <ScalarProperty Name="Registro_Acceso_ID" ColumnName="Registro_Acceso_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora_Acceso" ColumnName="Fecha_Hora_Acceso" />
+          <ScalarProperty Name="Tipo_Acceso" ColumnName="Tipo_Acceso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Actividad_Cliente">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Registros_Actividad_Cliente)">
+        <MappingFragment StoreEntitySet="Registros_Actividad_Cliente">
+          <ScalarProperty Name="Registro_ID" ColumnName="Registro_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Actividad_Intermediario">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Registros_Actividad_Intermediario)">
+        <MappingFragment StoreEntitySet="Registros_Actividad_Intermediario">
+          <ScalarProperty Name="Registro_Intermediario_ID" ColumnName="Registro_Intermediario_ID" />
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Reservaciones)">
+        <MappingFragment StoreEntitySet="Reservaciones">
+          <ScalarProperty Name="Reservacion_ID" ColumnName="Reservacion_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Paquete_ID" ColumnName="Paquete_ID" />
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Fecha_Reservacion" ColumnName="Fecha_Reservacion" />
+          <ScalarProperty Name="Metodo_Pago" ColumnName="Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios_Adicionales">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Servicios_Adicionales)">
+        <MappingFragment StoreEntitySet="Servicios_Adicionales">
+          <ScalarProperty Name="Servicio_ID" ColumnName="Servicio_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transacciones_Financieras">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Transacciones_Financieras)">
+        <MappingFragment StoreEntitySet="Transacciones_Financieras">
+          <ScalarProperty Name="Transaccion_ID" ColumnName="Transaccion_ID" />
+          <ScalarProperty Name="Tipo_Transaccion" ColumnName="Tipo_Transaccion" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Metodo_Pago" ColumnName="Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Productos)">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="Producto_ID" ColumnName="Producto_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios_Comida_Bebida">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloHPP.Servicios_Comida_Bebida)">
+        <MappingFragment StoreEntitySet="Servicios_Comida_Bebida">
+          <ScalarProperty Name="Servicio_Comida_Bebida_ID" ColumnName="Servicio_Comida_Bebida_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Producto_ID" ColumnName="Producto_ID" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

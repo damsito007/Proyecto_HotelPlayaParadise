@@ -1,0 +1,21 @@
+﻿/* Estilos para los enlaces */
+.linkstyle {
+    color: #007bff; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+    /* Estilo cuando el cursor está sobre el enlace */
+    .linkstyle:hover {
+        color: #0056b3; /* Cambia el color del texto al pasar el ratón */
+    }
+
+    /* Estilo para los enlaces visitados */
+    .linkstyle:visited {
+        color: #800080; /* Cambia el color del texto para enlaces visitados */
+    }
+
+    /* Estilo para los enlaces activos */
+    .linkstyle:active {
+        color: #003d80; /* Cambia el color del texto cuando el enlace está activo */
+    }

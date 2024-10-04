@@ -1,0 +1,50 @@
+﻿@model HotelPlayaParadise.Models.Servicios_Comida_Bebida
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Servicios_Comida_Bebida</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.Producto_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.Producto_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Servicio_Comida_Bebida_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Meta>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Metas</h2>
+
+<link rel="stylesheet" href="~/css/StyleLink.css">
+<link rel="stylesheet" href="~/css/StyleTables.css">
+<link rel="stylesheet" href="~/css/StyleSummitButton.css">
+
+<a href="@Url.Action("Create", "Metas")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+    Crear Nuevo
+</a>
+<table class="styled-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_esperado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_limite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Indicador.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor_esperado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_limite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Indicador.Nombre)
+            </td>
+            <td>
+                @Html.ActionButton("Editar", "Edit", "Metas", new { id = item.Id }, new { @class = "btnC" }) |
+                <a href="@Url.Action("Details", "Metas", new { id = item.Id })" class="btngreen" style="text-decoration: none; color:green">
+                    Detalles
+                </a> |
+                @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                @Html.ActionButton("Eliminar", "Delete", "Metas", new { id = item.Id }, new { @class = "btnD" })
+            </td>
+        </tr>
+    }
+
+</table>

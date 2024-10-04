@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Transacciones_Financieras>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Transacción Financiera</h2>
+<link rel="stylesheet" href="~/css/StyleLink.css">
+<link rel="stylesheet" href="~/css/StyleTables.css">
+<link rel="stylesheet" href="~/css/StyleSummitButton.css">
+<a href="@Url.Action("Create", "Transacciones_Financieras")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+    Crear Nuevo
+</a>
+<table class="styled-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Transaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metodo_Pago)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Transaccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metodo_Pago)
+            </td>
+            <td>
+                @Html.ActionButton("Editar", "Edit", "Transacciones_Financieras", new { id = item.Transaccion_ID }, new { @class = "btnC" }) |
+                <a href="@Url.Action("Details", "Transacciones_Financieras", new { id = item.Transaccion_ID })" class="btngreen" style="text-decoration: none; color:green">
+                    Detalles
+                </a> |
+                @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                @Html.ActionButton("Eliminar", "Delete", "Transacciones_Financieras", new { id = item.Transaccion_ID }, new { @class = "btnD" })
+            </td>
+        </tr>
+    }
+
+</table>

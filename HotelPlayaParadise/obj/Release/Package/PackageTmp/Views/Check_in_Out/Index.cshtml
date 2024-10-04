@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Check_in_Out>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Check_in)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Check_out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Habitaciones.Tipo_Habitacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Check_in)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Check_out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Habitaciones.Tipo_Habitacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Check_in_Out_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Check_in_Out_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Check_in_Out_ID })
+        </td>
+    </tr>
+}
+
+</table>

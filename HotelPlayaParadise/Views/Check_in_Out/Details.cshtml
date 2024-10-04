@@ -1,0 +1,50 @@
+﻿@model HotelPlayaParadise.Models.Check_in_Out
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Check_in_Out</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Check_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Check_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Check_out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Check_out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Habitaciones.Tipo_Habitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Habitaciones.Tipo_Habitacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Check_in_Out_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

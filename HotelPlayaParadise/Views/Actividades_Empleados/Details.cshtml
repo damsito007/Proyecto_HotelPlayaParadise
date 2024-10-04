@@ -1,0 +1,50 @@
+﻿@model HotelPlayaParadise.Models.Actividades_Empleados
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Actividades_Empleados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Hora_Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Hora_Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Actividad_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

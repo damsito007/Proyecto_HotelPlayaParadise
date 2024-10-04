@@ -1,0 +1,1688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actividades_Empleados">
+          <Key>
+            <PropertyRef Name="Actividad_ID" />
+          </Key>
+          <Property Name="Actividad_ID" Type="int" Nullable="false" />
+          <Property Name="Empleado_ID" Type="int" />
+          <Property Name="Fecha_Hora_Actividad" Type="datetime" />
+          <Property Name="Tipo_Actividad" Type="varchar" MaxLength="100" />
+          <Property Name="Rol" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Check_in_Out">
+          <Key>
+            <PropertyRef Name="Check_in_Out_ID" />
+          </Key>
+          <Property Name="Check_in_Out_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Habitacion_ID" Type="int" />
+          <Property Name="Fecha_Check_in" Type="datetime" />
+          <Property Name="Fecha_Check_out" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Cliente_ID" />
+          </Key>
+          <Property Name="Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Apellido" Type="varchar" MaxLength="100" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="100" />
+          <Property Name="Tipo_Cliente" Type="varchar" MaxLength="100" />
+          <Property Name="Metodo_Reservacion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CMI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Periodo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Comentarios_Valoraciones_Clientes">
+          <Key>
+            <PropertyRef Name="Comentario_ID" />
+          </Key>
+          <Property Name="Comentario_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Comentario" Type="text" />
+          <Property Name="Valoracion" Type="int" />
+        </EntityType>
+        <EntityType Name="Compras_Servicios_Adicionales">
+          <Key>
+            <PropertyRef Name="Compra_Servicio_ID" />
+          </Key>
+          <Property Name="Compra_Servicio_ID" Type="int" Nullable="false" />
+          <Property Name="Reservacion_ID" Type="int" />
+          <Property Name="Servicio_ID" Type="int" />
+          <Property Name="Fecha_Hora" Type="datetime" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Empleado_ID" />
+          </Key>
+          <Property Name="Empleado_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Apellido" Type="varchar" MaxLength="100" />
+          <Property Name="Puesto" Type="varchar" MaxLength="100" />
+          <Property Name="Area" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="Evento_ID" />
+          </Key>
+          <Property Name="Evento_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre_Evento" Type="varchar" MaxLength="100" />
+          <Property Name="Fecha_Hora" Type="datetime" />
+          <Property Name="Descripcion" Type="text" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="Factura_ID" />
+          </Key>
+          <Property Name="Factura_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Fecha_Factura" Type="date" />
+          <Property Name="Total" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Habitaciones">
+          <Key>
+            <PropertyRef Name="Habitacion_ID" />
+          </Key>
+          <Property Name="Habitacion_ID" Type="int" Nullable="false" />
+          <Property Name="Tipo_Habitacion" Type="varchar" MaxLength="100" />
+          <Property Name="Capacidad" Type="int" />
+          <Property Name="Precio_Noche" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Disponibilidad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Indicador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Frecuencia_Medida" Type="varchar" MaxLength="50" />
+          <Property Name="Unidad_Medida" Type="varchar" MaxLength="50" />
+          <Property Name="Objetivo_Id" Type="int" Nullable="false" />
+          <Property Name="Tipo_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Indicador_Dato">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Indicador_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Intermediarios">
+          <Key>
+            <PropertyRef Name="Intermediario_ID" />
+          </Key>
+          <Property Name="Intermediario_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Tipo_Intermediario" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Meta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Valor_esperado" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_limite" Type="date" />
+          <Property Name="Indicador_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Objetivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="Metrica" Type="varchar" MaxLength="50" />
+          <Property Name="Ponderacion" Type="varchar" MaxLength="50" />
+          <Property Name="CMI_Id" Type="int" Nullable="false" />
+          <Property Name="Perspectiva_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paquetes">
+          <Key>
+            <PropertyRef Name="Paquete_ID" />
+          </Key>
+          <Property Name="Paquete_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Perspectiva">
+          <Key>
+            <PropertyRef Name="Perspectiva_Id" />
+          </Key>
+          <Property Name="Perspectiva_Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="Producto_ID" />
+          </Key>
+          <Property Name="Producto_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Descripción" Type="varchar" MaxLength="100" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Promociones">
+          <Key>
+            <PropertyRef Name="Promocion_ID" />
+          </Key>
+          <Property Name="Promocion_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="Fecha_Inicio" Type="date" />
+          <Property Name="Fecha_Fin" Type="date" />
+          <Property Name="Descuento" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Registros_Acceso_Hotel">
+          <Key>
+            <PropertyRef Name="Registro_Acceso_ID" />
+          </Key>
+          <Property Name="Registro_Acceso_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Fecha_Hora_Acceso" Type="datetime" />
+          <Property Name="Tipo_Acceso" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Registros_Actividad_Cliente">
+          <Key>
+            <PropertyRef Name="Registro_ID" />
+          </Key>
+          <Property Name="Registro_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Fecha_Hora_Actividad" Type="datetime" />
+          <Property Name="Tipo_Actividad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Registros_Actividad_Intermediario">
+          <Key>
+            <PropertyRef Name="Registro_Intermediario_ID" />
+          </Key>
+          <Property Name="Registro_Intermediario_ID" Type="int" Nullable="false" />
+          <Property Name="Intermediario_ID" Type="int" />
+          <Property Name="Empleado_ID" Type="int" />
+          <Property Name="Rol" Type="varchar" MaxLength="100" />
+          <Property Name="Fecha_Hora_Actividad" Type="datetime" />
+          <Property Name="Tipo_Actividad" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Reservaciones">
+          <Key>
+            <PropertyRef Name="Reservacion_ID" />
+          </Key>
+          <Property Name="Reservacion_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Paquete_ID" Type="int" />
+          <Property Name="Habitacion_ID" Type="int" />
+          <Property Name="Intermediario_ID" Type="int" />
+          <Property Name="Fecha_Reservacion" Type="date" />
+          <Property Name="Metodo_Pago" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Servicios_Adicionales">
+          <Key>
+            <PropertyRef Name="Servicio_ID" />
+          </Key>
+          <Property Name="Servicio_ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Descripcion" Type="text" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Servicios_Comida_Bebida">
+          <Key>
+            <PropertyRef Name="Servicio_Comida_Bebida_ID" />
+          </Key>
+          <Property Name="Servicio_Comida_Bebida_ID" Type="int" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" />
+          <Property Name="Fecha_Hora" Type="datetime" />
+          <Property Name="Producto_ID" Type="int" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="Tipo_Id" />
+          </Key>
+          <Property Name="Tipo_Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Transacciones_Financieras">
+          <Key>
+            <PropertyRef Name="Transaccion_ID" />
+          </Key>
+          <Property Name="Transaccion_ID" Type="int" Nullable="false" />
+          <Property Name="Tipo_Transaccion" Type="varchar" MaxLength="100" />
+          <Property Name="Monto" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Fecha_Hora" Type="datetime" />
+          <Property Name="Metodo_Pago" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__Actividad__Emple__5BE2A6F2">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+          <End Role="Actividades_Empleados" Type="Self.Actividades_Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Actividades_Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Check_in___Clien__5535A963">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Check_in_Out" Type="Self.Check_in_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Check_in_Out">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Check_in___Habit__5629CD9C">
+          <End Role="Habitaciones" Type="Self.Habitaciones" Multiplicity="0..1" />
+          <End Role="Check_in_Out" Type="Self.Check_in_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Principal>
+            <Dependent Role="Check_in_Out">
+              <PropertyRef Name="Habitacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comentari__Clien__6B24EA82">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Comentarios_Valoraciones_Clientes" Type="Self.Comentarios_Valoraciones_Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Comentarios_Valoraciones_Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Compras_S__Reser__73BA3083">
+          <End Role="Reservaciones" Type="Self.Reservaciones" Multiplicity="0..1" />
+          <End Role="Compras_Servicios_Adicionales" Type="Self.Compras_Servicios_Adicionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservaciones">
+              <PropertyRef Name="Reservacion_ID" />
+            </Principal>
+            <Dependent Role="Compras_Servicios_Adicionales">
+              <PropertyRef Name="Reservacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Compras_S__Servi__74AE54BC">
+          <End Role="Servicios_Adicionales" Type="Self.Servicios_Adicionales" Multiplicity="0..1" />
+          <End Role="Compras_Servicios_Adicionales" Type="Self.Compras_Servicios_Adicionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios_Adicionales">
+              <PropertyRef Name="Servicio_ID" />
+            </Principal>
+            <Dependent Role="Compras_Servicios_Adicionales">
+              <PropertyRef Name="Servicio_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facturas__Client__59063A47">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Clien__6477ECF3">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Registros_Actividad_Cliente" Type="Self.Registros_Actividad_Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Cliente">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Clien__778AC167">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Registros_Acceso_Hotel" Type="Self.Registros_Acceso_Hotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Registros_Acceso_Hotel">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Emple__68487DD7">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+          <End Role="Registros_Actividad_Intermediario" Type="Self.Registros_Actividad_Intermediario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Intermediario">
+              <PropertyRef Name="Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Inter__6754599E">
+          <End Role="Intermediarios" Type="Self.Intermediarios" Multiplicity="0..1" />
+          <End Role="Registros_Actividad_Intermediario" Type="Self.Registros_Actividad_Intermediario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intermediarios">
+              <PropertyRef Name="Intermediario_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Intermediario">
+              <PropertyRef Name="Intermediario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Clien__5EBF139D">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Reservaciones" Type="Self.Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Habit__60A75C0F">
+          <End Role="Habitaciones" Type="Self.Habitaciones" Multiplicity="0..1" />
+          <End Role="Reservaciones" Type="Self.Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Inter__619B8048">
+          <End Role="Intermediarios" Type="Self.Intermediarios" Multiplicity="0..1" />
+          <End Role="Reservaciones" Type="Self.Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intermediarios">
+              <PropertyRef Name="Intermediario_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Intermediario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Paque__5FB337D6">
+          <End Role="Paquetes" Type="Self.Paquetes" Multiplicity="0..1" />
+          <End Role="Reservaciones" Type="Self.Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paquetes">
+              <PropertyRef Name="Paquete_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Paquete_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__Clien__02084FDA">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+          <End Role="Servicios_Comida_Bebida" Type="Self.Servicios_Comida_Bebida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Servicios_Comida_Bebida">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__Produ__02FC7413">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="Servicios_Comida_Bebida" Type="Self.Servicios_Comida_Bebida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="Producto_ID" />
+            </Principal>
+            <Dependent Role="Servicios_Comida_Bebida">
+              <PropertyRef Name="Producto_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Dato_Indicador">
+          <End Role="Indicador" Type="Self.Indicador" Multiplicity="1" />
+          <End Role="Indicador_Dato" Type="Self.Indicador_Dato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Indicador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicador_Dato">
+              <PropertyRef Name="Indicador_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Objetivo">
+          <End Role="Objetivo" Type="Self.Objetivo" Multiplicity="1" />
+          <End Role="Indicador" Type="Self.Indicador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objetivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicador">
+              <PropertyRef Name="Objetivo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Tipo">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+          <End Role="Indicador" Type="Self.Indicador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="Tipo_Id" />
+            </Principal>
+            <Dependent Role="Indicador">
+              <PropertyRef Name="Tipo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meta_Indicador">
+          <End Role="Indicador" Type="Self.Indicador" Multiplicity="1" />
+          <End Role="Meta" Type="Self.Meta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Indicador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Meta">
+              <PropertyRef Name="Indicador_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Objetivo_CMI">
+          <End Role="CMI" Type="Self.CMI" Multiplicity="1" />
+          <End Role="Objetivo" Type="Self.Objetivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Objetivo">
+              <PropertyRef Name="CMI_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Objetivo_Perspectiva">
+          <End Role="Perspectiva" Type="Self.Perspectiva" Multiplicity="1" />
+          <End Role="Objetivo" Type="Self.Objetivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perspectiva">
+              <PropertyRef Name="Perspectiva_Id" />
+            </Principal>
+            <Dependent Role="Objetivo">
+              <PropertyRef Name="Perspectiva_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="Actividades_Empleados" EntityType="Self.Actividades_Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Check_in_Out" EntityType="Self.Check_in_Out" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMI" EntityType="Self.CMI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comentarios_Valoraciones_Clientes" EntityType="Self.Comentarios_Valoraciones_Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compras_Servicios_Adicionales" EntityType="Self.Compras_Servicios_Adicionales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventos" EntityType="Self.Eventos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Habitaciones" EntityType="Self.Habitaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Indicador" EntityType="Self.Indicador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Indicador_Dato" EntityType="Self.Indicador_Dato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Intermediarios" EntityType="Self.Intermediarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meta" EntityType="Self.Meta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Objetivo" EntityType="Self.Objetivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paquetes" EntityType="Self.Paquetes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perspectiva" EntityType="Self.Perspectiva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Promociones" EntityType="Self.Promociones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registros_Acceso_Hotel" EntityType="Self.Registros_Acceso_Hotel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registros_Actividad_Cliente" EntityType="Self.Registros_Actividad_Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registros_Actividad_Intermediario" EntityType="Self.Registros_Actividad_Intermediario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servicios_Adicionales" EntityType="Self.Servicios_Adicionales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servicios_Comida_Bebida" EntityType="Self.Servicios_Comida_Bebida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transacciones_Financieras" EntityType="Self.Transacciones_Financieras" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Actividad__Emple__5BE2A6F2" Association="Self.FK__Actividad__Emple__5BE2A6F2">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Actividades_Empleados" EntitySet="Actividades_Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Check_in___Clien__5535A963" Association="Self.FK__Check_in___Clien__5535A963">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Check_in_Out" EntitySet="Check_in_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Check_in___Habit__5629CD9C" Association="Self.FK__Check_in___Habit__5629CD9C">
+            <End Role="Habitaciones" EntitySet="Habitaciones" />
+            <End Role="Check_in_Out" EntitySet="Check_in_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comentari__Clien__6B24EA82" Association="Self.FK__Comentari__Clien__6B24EA82">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Comentarios_Valoraciones_Clientes" EntitySet="Comentarios_Valoraciones_Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Compras_S__Reser__73BA3083" Association="Self.FK__Compras_S__Reser__73BA3083">
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+            <End Role="Compras_Servicios_Adicionales" EntitySet="Compras_Servicios_Adicionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Compras_S__Servi__74AE54BC" Association="Self.FK__Compras_S__Servi__74AE54BC">
+            <End Role="Servicios_Adicionales" EntitySet="Servicios_Adicionales" />
+            <End Role="Compras_Servicios_Adicionales" EntitySet="Compras_Servicios_Adicionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facturas__Client__59063A47" Association="Self.FK__Facturas__Client__59063A47">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Clien__6477ECF3" Association="Self.FK__Registros__Clien__6477ECF3">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Registros_Actividad_Cliente" EntitySet="Registros_Actividad_Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Clien__778AC167" Association="Self.FK__Registros__Clien__778AC167">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Registros_Acceso_Hotel" EntitySet="Registros_Acceso_Hotel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Emple__68487DD7" Association="Self.FK__Registros__Emple__68487DD7">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Registros_Actividad_Intermediario" EntitySet="Registros_Actividad_Intermediario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Inter__6754599E" Association="Self.FK__Registros__Inter__6754599E">
+            <End Role="Intermediarios" EntitySet="Intermediarios" />
+            <End Role="Registros_Actividad_Intermediario" EntitySet="Registros_Actividad_Intermediario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Clien__5EBF139D" Association="Self.FK__Reservaci__Clien__5EBF139D">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Habit__60A75C0F" Association="Self.FK__Reservaci__Habit__60A75C0F">
+            <End Role="Habitaciones" EntitySet="Habitaciones" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Inter__619B8048" Association="Self.FK__Reservaci__Inter__619B8048">
+            <End Role="Intermediarios" EntitySet="Intermediarios" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Paque__5FB337D6" Association="Self.FK__Reservaci__Paque__5FB337D6">
+            <End Role="Paquetes" EntitySet="Paquetes" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__Clien__02084FDA" Association="Self.FK__Servicios__Clien__02084FDA">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Servicios_Comida_Bebida" EntitySet="Servicios_Comida_Bebida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__Produ__02FC7413" Association="Self.FK__Servicios__Produ__02FC7413">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Servicios_Comida_Bebida" EntitySet="Servicios_Comida_Bebida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Dato_Indicador" Association="Self.FK_Indicador_Dato_Indicador">
+            <End Role="Indicador" EntitySet="Indicador" />
+            <End Role="Indicador_Dato" EntitySet="Indicador_Dato" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Objetivo" Association="Self.FK_Indicador_Objetivo">
+            <End Role="Objetivo" EntitySet="Objetivo" />
+            <End Role="Indicador" EntitySet="Indicador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Tipo" Association="Self.FK_Indicador_Tipo">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="Indicador" EntitySet="Indicador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meta_Indicador" Association="Self.FK_Meta_Indicador">
+            <End Role="Indicador" EntitySet="Indicador" />
+            <End Role="Meta" EntitySet="Meta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Objetivo_CMI" Association="Self.FK_Objetivo_CMI">
+            <End Role="CMI" EntitySet="CMI" />
+            <End Role="Objetivo" EntitySet="Objetivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Objetivo_Perspectiva" Association="Self.FK_Objetivo_Perspectiva">
+            <End Role="Perspectiva" EntitySet="Perspectiva" />
+            <End Role="Objetivo" EntitySet="Objetivo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividades_Empleados" EntityType="Model1.Actividades_Empleados" />
+          <EntitySet Name="Check_in_Out" EntityType="Model1.Check_in_Out" />
+          <EntitySet Name="Clientes" EntityType="Model1.Clientes" />
+          <EntitySet Name="Comentarios_Valoraciones_Clientes" EntityType="Model1.Comentarios_Valoraciones_Clientes" />
+          <EntitySet Name="Compras_Servicios_Adicionales" EntityType="Model1.Compras_Servicios_Adicionales" />
+          <EntitySet Name="Empleados" EntityType="Model1.Empleados" />
+          <EntitySet Name="Eventos" EntityType="Model1.Eventos" />
+          <EntitySet Name="Facturas" EntityType="Model1.Facturas" />
+          <EntitySet Name="Habitaciones" EntityType="Model1.Habitaciones" />
+          <EntitySet Name="Intermediarios" EntityType="Model1.Intermediarios" />
+          <EntitySet Name="Paquetes" EntityType="Model1.Paquetes" />
+          <EntitySet Name="Productos" EntityType="Model1.Productos" />
+          <EntitySet Name="Promociones" EntityType="Model1.Promociones" />
+          <EntitySet Name="Registros_Acceso_Hotel" EntityType="Model1.Registros_Acceso_Hotel" />
+          <EntitySet Name="Registros_Actividad_Cliente" EntityType="Model1.Registros_Actividad_Cliente" />
+          <EntitySet Name="Registros_Actividad_Intermediario" EntityType="Model1.Registros_Actividad_Intermediario" />
+          <EntitySet Name="Reservaciones" EntityType="Model1.Reservaciones" />
+          <EntitySet Name="Servicios_Adicionales" EntityType="Model1.Servicios_Adicionales" />
+          <EntitySet Name="Servicios_Comida_Bebida" EntityType="Model1.Servicios_Comida_Bebida" />
+          <EntitySet Name="Transacciones_Financieras" EntityType="Model1.Transacciones_Financieras" />
+          <AssociationSet Name="FK__Actividad__Emple__5BE2A6F2" Association="Model1.FK__Actividad__Emple__5BE2A6F2">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Actividades_Empleados" EntitySet="Actividades_Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Check_in___Clien__5535A963" Association="Model1.FK__Check_in___Clien__5535A963">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Check_in_Out" EntitySet="Check_in_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Check_in___Habit__5629CD9C" Association="Model1.FK__Check_in___Habit__5629CD9C">
+            <End Role="Habitaciones" EntitySet="Habitaciones" />
+            <End Role="Check_in_Out" EntitySet="Check_in_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Comentari__Clien__6B24EA82" Association="Model1.FK__Comentari__Clien__6B24EA82">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Comentarios_Valoraciones_Clientes" EntitySet="Comentarios_Valoraciones_Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Facturas__Client__59063A47" Association="Model1.FK__Facturas__Client__59063A47">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Clien__6477ECF3" Association="Model1.FK__Registros__Clien__6477ECF3">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Registros_Actividad_Cliente" EntitySet="Registros_Actividad_Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Clien__778AC167" Association="Model1.FK__Registros__Clien__778AC167">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Registros_Acceso_Hotel" EntitySet="Registros_Acceso_Hotel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Clien__5EBF139D" Association="Model1.FK__Reservaci__Clien__5EBF139D">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__Clien__02084FDA" Association="Model1.FK__Servicios__Clien__02084FDA">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Servicios_Comida_Bebida" EntitySet="Servicios_Comida_Bebida" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Compras_S__Reser__73BA3083" Association="Model1.FK__Compras_S__Reser__73BA3083">
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+            <End Role="Compras_Servicios_Adicionales" EntitySet="Compras_Servicios_Adicionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Compras_S__Servi__74AE54BC" Association="Model1.FK__Compras_S__Servi__74AE54BC">
+            <End Role="Servicios_Adicionales" EntitySet="Servicios_Adicionales" />
+            <End Role="Compras_Servicios_Adicionales" EntitySet="Compras_Servicios_Adicionales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Emple__68487DD7" Association="Model1.FK__Registros__Emple__68487DD7">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Registros_Actividad_Intermediario" EntitySet="Registros_Actividad_Intermediario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Habit__60A75C0F" Association="Model1.FK__Reservaci__Habit__60A75C0F">
+            <End Role="Habitaciones" EntitySet="Habitaciones" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registros__Inter__6754599E" Association="Model1.FK__Registros__Inter__6754599E">
+            <End Role="Intermediarios" EntitySet="Intermediarios" />
+            <End Role="Registros_Actividad_Intermediario" EntitySet="Registros_Actividad_Intermediario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Inter__619B8048" Association="Model1.FK__Reservaci__Inter__619B8048">
+            <End Role="Intermediarios" EntitySet="Intermediarios" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservaci__Paque__5FB337D6" Association="Model1.FK__Reservaci__Paque__5FB337D6">
+            <End Role="Paquetes" EntitySet="Paquetes" />
+            <End Role="Reservaciones" EntitySet="Reservaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__Produ__02FC7413" Association="Model1.FK__Servicios__Produ__02FC7413">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Servicios_Comida_Bebida" EntitySet="Servicios_Comida_Bebida" />
+          </AssociationSet>
+          <EntitySet Name="CMIs" EntityType="Model1.CMI" />
+          <EntitySet Name="Indicadors" EntityType="Model1.Indicador" />
+          <EntitySet Name="Indicador_Dato" EntityType="Model1.Indicador_Dato" />
+          <EntitySet Name="Metas" EntityType="Model1.Meta" />
+          <EntitySet Name="Objetivoes" EntityType="Model1.Objetivo" />
+          <EntitySet Name="Perspectivas" EntityType="Model1.Perspectiva" />
+          <EntitySet Name="Tipoes" EntityType="Model1.Tipo" />
+          <AssociationSet Name="FK_Objetivo_CMI" Association="Model1.FK_Objetivo_CMI">
+            <End Role="CMI" EntitySet="CMIs" />
+            <End Role="Objetivo" EntitySet="Objetivoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Dato_Indicador" Association="Model1.FK_Indicador_Dato_Indicador">
+            <End Role="Indicador" EntitySet="Indicadors" />
+            <End Role="Indicador_Dato" EntitySet="Indicador_Dato" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Objetivo" Association="Model1.FK_Indicador_Objetivo">
+            <End Role="Objetivo" EntitySet="Objetivoes" />
+            <End Role="Indicador" EntitySet="Indicadors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meta_Indicador" Association="Model1.FK_Meta_Indicador">
+            <End Role="Indicador" EntitySet="Indicadors" />
+            <End Role="Meta" EntitySet="Metas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Indicador_Tipo" Association="Model1.FK_Indicador_Tipo">
+            <End Role="Tipo" EntitySet="Tipoes" />
+            <End Role="Indicador" EntitySet="Indicadors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Objetivo_Perspectiva" Association="Model1.FK_Objetivo_Perspectiva">
+            <End Role="Perspectiva" EntitySet="Perspectivas" />
+            <End Role="Objetivo" EntitySet="Objetivoes" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Actividades_Empleados">
+          <Key>
+            <PropertyRef Name="Actividad_ID" />
+          </Key>
+          <Property Name="Actividad_ID" Type="Int32" Nullable="false" />
+          <Property Name="Empleado_ID" Type="Int32" />
+          <Property Name="Fecha_Hora_Actividad" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Rol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleados" Relationship="Model1.FK__Actividad__Emple__5BE2A6F2" FromRole="Actividades_Empleados" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="Check_in_Out">
+          <Key>
+            <PropertyRef Name="Check_in_Out_ID" />
+          </Key>
+          <Property Name="Check_in_Out_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Habitacion_ID" Type="Int32" />
+          <Property Name="Fecha_Check_in" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Check_out" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Check_in___Clien__5535A963" FromRole="Check_in_Out" ToRole="Clientes" />
+          <NavigationProperty Name="Habitaciones" Relationship="Model1.FK__Check_in___Habit__5629CD9C" FromRole="Check_in_Out" ToRole="Habitaciones" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Cliente_ID" />
+          </Key>
+          <Property Name="Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Cliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Metodo_Reservacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Check_in_Out" Relationship="Model1.FK__Check_in___Clien__5535A963" FromRole="Clientes" ToRole="Check_in_Out" />
+          <NavigationProperty Name="Comentarios_Valoraciones_Clientes" Relationship="Model1.FK__Comentari__Clien__6B24EA82" FromRole="Clientes" ToRole="Comentarios_Valoraciones_Clientes" />
+          <NavigationProperty Name="Facturas" Relationship="Model1.FK__Facturas__Client__59063A47" FromRole="Clientes" ToRole="Facturas" />
+          <NavigationProperty Name="Registros_Actividad_Cliente" Relationship="Model1.FK__Registros__Clien__6477ECF3" FromRole="Clientes" ToRole="Registros_Actividad_Cliente" />
+          <NavigationProperty Name="Registros_Acceso_Hotel" Relationship="Model1.FK__Registros__Clien__778AC167" FromRole="Clientes" ToRole="Registros_Acceso_Hotel" />
+          <NavigationProperty Name="Reservaciones" Relationship="Model1.FK__Reservaci__Clien__5EBF139D" FromRole="Clientes" ToRole="Reservaciones" />
+          <NavigationProperty Name="Servicios_Comida_Bebida" Relationship="Model1.FK__Servicios__Clien__02084FDA" FromRole="Clientes" ToRole="Servicios_Comida_Bebida" />
+        </EntityType>
+        <EntityType Name="Comentarios_Valoraciones_Clientes">
+          <Key>
+            <PropertyRef Name="Comentario_ID" />
+          </Key>
+          <Property Name="Comentario_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Valoracion" Type="Int32" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Comentari__Clien__6B24EA82" FromRole="Comentarios_Valoraciones_Clientes" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Compras_Servicios_Adicionales">
+          <Key>
+            <PropertyRef Name="Compra_Servicio_ID" />
+          </Key>
+          <Property Name="Compra_Servicio_ID" Type="Int32" Nullable="false" />
+          <Property Name="Reservacion_ID" Type="Int32" />
+          <Property Name="Servicio_ID" Type="Int32" />
+          <Property Name="Fecha_Hora" Type="DateTime" Precision="3" />
+          <Property Name="Cantidad" Type="Int32" />
+          <NavigationProperty Name="Reservaciones" Relationship="Model1.FK__Compras_S__Reser__73BA3083" FromRole="Compras_Servicios_Adicionales" ToRole="Reservaciones" />
+          <NavigationProperty Name="Servicios_Adicionales" Relationship="Model1.FK__Compras_S__Servi__74AE54BC" FromRole="Compras_Servicios_Adicionales" ToRole="Servicios_Adicionales" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Empleado_ID" />
+          </Key>
+          <Property Name="Empleado_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Puesto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Actividades_Empleados" Relationship="Model1.FK__Actividad__Emple__5BE2A6F2" FromRole="Empleados" ToRole="Actividades_Empleados" />
+          <NavigationProperty Name="Registros_Actividad_Intermediario" Relationship="Model1.FK__Registros__Emple__68487DD7" FromRole="Empleados" ToRole="Registros_Actividad_Intermediario" />
+        </EntityType>
+        <EntityType Name="Eventos">
+          <Key>
+            <PropertyRef Name="Evento_ID" />
+          </Key>
+          <Property Name="Evento_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_Evento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Hora" Type="DateTime" Precision="3" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="Factura_ID" />
+          </Key>
+          <Property Name="Factura_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Fecha_Factura" Type="DateTime" Precision="0" />
+          <Property Name="Total" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Facturas__Client__59063A47" FromRole="Facturas" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Habitaciones">
+          <Key>
+            <PropertyRef Name="Habitacion_ID" />
+          </Key>
+          <Property Name="Habitacion_ID" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_Habitacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Capacidad" Type="Int32" />
+          <Property Name="Precio_Noche" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Disponibilidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Check_in_Out" Relationship="Model1.FK__Check_in___Habit__5629CD9C" FromRole="Habitaciones" ToRole="Check_in_Out" />
+          <NavigationProperty Name="Reservaciones" Relationship="Model1.FK__Reservaci__Habit__60A75C0F" FromRole="Habitaciones" ToRole="Reservaciones" />
+        </EntityType>
+        <EntityType Name="Intermediarios">
+          <Key>
+            <PropertyRef Name="Intermediario_ID" />
+          </Key>
+          <Property Name="Intermediario_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Intermediario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Registros_Actividad_Intermediario" Relationship="Model1.FK__Registros__Inter__6754599E" FromRole="Intermediarios" ToRole="Registros_Actividad_Intermediario" />
+          <NavigationProperty Name="Reservaciones" Relationship="Model1.FK__Reservaci__Inter__619B8048" FromRole="Intermediarios" ToRole="Reservaciones" />
+        </EntityType>
+        <EntityType Name="Paquetes">
+          <Key>
+            <PropertyRef Name="Paquete_ID" />
+          </Key>
+          <Property Name="Paquete_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Reservaciones" Relationship="Model1.FK__Reservaci__Paque__5FB337D6" FromRole="Paquetes" ToRole="Reservaciones" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="Producto_ID" />
+          </Key>
+          <Property Name="Producto_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Servicios_Comida_Bebida" Relationship="Model1.FK__Servicios__Produ__02FC7413" FromRole="Productos" ToRole="Servicios_Comida_Bebida" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripción" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Promociones">
+          <Key>
+            <PropertyRef Name="Promocion_ID" />
+          </Key>
+          <Property Name="Promocion_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Inicio" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_Fin" Type="DateTime" Precision="0" />
+          <Property Name="Descuento" Type="Decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Registros_Acceso_Hotel">
+          <Key>
+            <PropertyRef Name="Registro_Acceso_ID" />
+          </Key>
+          <Property Name="Registro_Acceso_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Fecha_Hora_Acceso" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Acceso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Registros__Clien__778AC167" FromRole="Registros_Acceso_Hotel" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Registros_Actividad_Cliente">
+          <Key>
+            <PropertyRef Name="Registro_ID" />
+          </Key>
+          <Property Name="Registro_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Fecha_Hora_Actividad" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Registros__Clien__6477ECF3" FromRole="Registros_Actividad_Cliente" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Registros_Actividad_Intermediario">
+          <Key>
+            <PropertyRef Name="Registro_Intermediario_ID" />
+          </Key>
+          <Property Name="Registro_Intermediario_ID" Type="Int32" Nullable="false" />
+          <Property Name="Intermediario_ID" Type="Int32" />
+          <Property Name="Empleado_ID" Type="Int32" />
+          <Property Name="Rol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Hora_Actividad" Type="DateTime" Precision="3" />
+          <Property Name="Tipo_Actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Empleados" Relationship="Model1.FK__Registros__Emple__68487DD7" FromRole="Registros_Actividad_Intermediario" ToRole="Empleados" />
+          <NavigationProperty Name="Intermediarios" Relationship="Model1.FK__Registros__Inter__6754599E" FromRole="Registros_Actividad_Intermediario" ToRole="Intermediarios" />
+        </EntityType>
+        <EntityType Name="Reservaciones">
+          <Key>
+            <PropertyRef Name="Reservacion_ID" />
+          </Key>
+          <Property Name="Reservacion_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Paquete_ID" Type="Int32" />
+          <Property Name="Habitacion_ID" Type="Int32" />
+          <Property Name="Intermediario_ID" Type="Int32" />
+          <Property Name="Fecha_Reservacion" Type="DateTime" Precision="0" />
+          <Property Name="Metodo_Pago" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Reservaci__Clien__5EBF139D" FromRole="Reservaciones" ToRole="Clientes" />
+          <NavigationProperty Name="Compras_Servicios_Adicionales" Relationship="Model1.FK__Compras_S__Reser__73BA3083" FromRole="Reservaciones" ToRole="Compras_Servicios_Adicionales" />
+          <NavigationProperty Name="Habitaciones" Relationship="Model1.FK__Reservaci__Habit__60A75C0F" FromRole="Reservaciones" ToRole="Habitaciones" />
+          <NavigationProperty Name="Intermediarios" Relationship="Model1.FK__Reservaci__Inter__619B8048" FromRole="Reservaciones" ToRole="Intermediarios" />
+          <NavigationProperty Name="Paquetes" Relationship="Model1.FK__Reservaci__Paque__5FB337D6" FromRole="Reservaciones" ToRole="Paquetes" />
+        </EntityType>
+        <EntityType Name="Servicios_Adicionales">
+          <Key>
+            <PropertyRef Name="Servicio_ID" />
+          </Key>
+          <Property Name="Servicio_ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Compras_Servicios_Adicionales" Relationship="Model1.FK__Compras_S__Servi__74AE54BC" FromRole="Servicios_Adicionales" ToRole="Compras_Servicios_Adicionales" />
+        </EntityType>
+        <EntityType Name="Servicios_Comida_Bebida">
+          <Key>
+            <PropertyRef Name="Servicio_Comida_Bebida_ID" />
+          </Key>
+          <Property Name="Servicio_Comida_Bebida_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cliente_ID" Type="Int32" />
+          <Property Name="Fecha_Hora" Type="DateTime" Precision="3" />
+          <Property Name="Producto_ID" Type="Int32" />
+          <Property Name="Cantidad" Type="Int32" />
+          <NavigationProperty Name="Clientes" Relationship="Model1.FK__Servicios__Clien__02084FDA" FromRole="Servicios_Comida_Bebida" ToRole="Clientes" />
+          <NavigationProperty Name="Productos" Relationship="Model1.FK__Servicios__Produ__02FC7413" FromRole="Servicios_Comida_Bebida" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Transacciones_Financieras">
+          <Key>
+            <PropertyRef Name="Transaccion_ID" />
+          </Key>
+          <Property Name="Transaccion_ID" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_Transaccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Monto" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Fecha_Hora" Type="DateTime" Precision="3" />
+          <Property Name="Metodo_Pago" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Actividad__Emple__5BE2A6F2">
+          <End Type="Model1.Empleados" Role="Empleados" Multiplicity="0..1" />
+          <End Type="Model1.Actividades_Empleados" Role="Actividades_Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Actividades_Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Check_in___Clien__5535A963">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Check_in_Out" Role="Check_in_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Check_in_Out">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Check_in___Habit__5629CD9C">
+          <End Type="Model1.Habitaciones" Role="Habitaciones" Multiplicity="0..1" />
+          <End Type="Model1.Check_in_Out" Role="Check_in_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Principal>
+            <Dependent Role="Check_in_Out">
+              <PropertyRef Name="Habitacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Comentari__Clien__6B24EA82">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Comentarios_Valoraciones_Clientes" Role="Comentarios_Valoraciones_Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Comentarios_Valoraciones_Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Facturas__Client__59063A47">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Clien__6477ECF3">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Registros_Actividad_Cliente" Role="Registros_Actividad_Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Cliente">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Clien__778AC167">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Registros_Acceso_Hotel" Role="Registros_Acceso_Hotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Registros_Acceso_Hotel">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Clien__5EBF139D">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Reservaciones" Role="Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__Clien__02084FDA">
+          <End Type="Model1.Clientes" Role="Clientes" Multiplicity="0..1" />
+          <End Type="Model1.Servicios_Comida_Bebida" Role="Servicios_Comida_Bebida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Cliente_ID" />
+            </Principal>
+            <Dependent Role="Servicios_Comida_Bebida">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Compras_S__Reser__73BA3083">
+          <End Type="Model1.Reservaciones" Role="Reservaciones" Multiplicity="0..1" />
+          <End Type="Model1.Compras_Servicios_Adicionales" Role="Compras_Servicios_Adicionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reservaciones">
+              <PropertyRef Name="Reservacion_ID" />
+            </Principal>
+            <Dependent Role="Compras_Servicios_Adicionales">
+              <PropertyRef Name="Reservacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Compras_S__Servi__74AE54BC">
+          <End Type="Model1.Servicios_Adicionales" Role="Servicios_Adicionales" Multiplicity="0..1" />
+          <End Type="Model1.Compras_Servicios_Adicionales" Role="Compras_Servicios_Adicionales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios_Adicionales">
+              <PropertyRef Name="Servicio_ID" />
+            </Principal>
+            <Dependent Role="Compras_Servicios_Adicionales">
+              <PropertyRef Name="Servicio_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Emple__68487DD7">
+          <End Type="Model1.Empleados" Role="Empleados" Multiplicity="0..1" />
+          <End Type="Model1.Registros_Actividad_Intermediario" Role="Registros_Actividad_Intermediario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Empleado_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Intermediario">
+              <PropertyRef Name="Empleado_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Habit__60A75C0F">
+          <End Type="Model1.Habitaciones" Role="Habitaciones" Multiplicity="0..1" />
+          <End Type="Model1.Reservaciones" Role="Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Habitaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Habitacion_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registros__Inter__6754599E">
+          <End Type="Model1.Intermediarios" Role="Intermediarios" Multiplicity="0..1" />
+          <End Type="Model1.Registros_Actividad_Intermediario" Role="Registros_Actividad_Intermediario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intermediarios">
+              <PropertyRef Name="Intermediario_ID" />
+            </Principal>
+            <Dependent Role="Registros_Actividad_Intermediario">
+              <PropertyRef Name="Intermediario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Inter__619B8048">
+          <End Type="Model1.Intermediarios" Role="Intermediarios" Multiplicity="0..1" />
+          <End Type="Model1.Reservaciones" Role="Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intermediarios">
+              <PropertyRef Name="Intermediario_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Intermediario_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservaci__Paque__5FB337D6">
+          <End Type="Model1.Paquetes" Role="Paquetes" Multiplicity="0..1" />
+          <End Type="Model1.Reservaciones" Role="Reservaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paquetes">
+              <PropertyRef Name="Paquete_ID" />
+            </Principal>
+            <Dependent Role="Reservaciones">
+              <PropertyRef Name="Paquete_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__Produ__02FC7413">
+          <End Type="Model1.Productos" Role="Productos" Multiplicity="0..1" />
+          <End Type="Model1.Servicios_Comida_Bebida" Role="Servicios_Comida_Bebida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="Producto_ID" />
+            </Principal>
+            <Dependent Role="Servicios_Comida_Bebida">
+              <PropertyRef Name="Producto_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CMI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Objetivoes" Relationship="Model1.FK_Objetivo_CMI" FromRole="CMI" ToRole="Objetivo" />
+        </EntityType>
+        <EntityType Name="Indicador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Frecuencia_Medida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Unidad_Medida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Objetivo_Id" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Indicador_Dato" Relationship="Model1.FK_Indicador_Dato_Indicador" FromRole="Indicador" ToRole="Indicador_Dato" />
+          <NavigationProperty Name="Objetivo" Relationship="Model1.FK_Indicador_Objetivo" FromRole="Indicador" ToRole="Objetivo" />
+          <NavigationProperty Name="Metas" Relationship="Model1.FK_Meta_Indicador" FromRole="Indicador" ToRole="Meta" />
+          <NavigationProperty Name="Tipo" Relationship="Model1.FK_Indicador_Tipo" FromRole="Indicador" ToRole="Tipo" />
+        </EntityType>
+        <EntityType Name="Indicador_Dato">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Indicador_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Indicador" Relationship="Model1.FK_Indicador_Dato_Indicador" FromRole="Indicador_Dato" ToRole="Indicador" />
+        </EntityType>
+        <EntityType Name="Meta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Valor_esperado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_limite" Type="DateTime" Precision="0" />
+          <Property Name="Indicador_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Indicador" Relationship="Model1.FK_Meta_Indicador" FromRole="Meta" ToRole="Indicador" />
+        </EntityType>
+        <EntityType Name="Objetivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Metrica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ponderacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CMI_Id" Type="Int32" Nullable="false" />
+          <Property Name="Perspectiva_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CMI" Relationship="Model1.FK_Objetivo_CMI" FromRole="Objetivo" ToRole="CMI" />
+          <NavigationProperty Name="Indicadors" Relationship="Model1.FK_Indicador_Objetivo" FromRole="Objetivo" ToRole="Indicador" />
+          <NavigationProperty Name="Perspectiva" Relationship="Model1.FK_Objetivo_Perspectiva" FromRole="Objetivo" ToRole="Perspectiva" />
+        </EntityType>
+        <EntityType Name="Perspectiva">
+          <Key>
+            <PropertyRef Name="Perspectiva_Id" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Perspectiva_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Objetivoes" Relationship="Model1.FK_Objetivo_Perspectiva" FromRole="Perspectiva" ToRole="Objetivo" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="Tipo_Id" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Indicadors" Relationship="Model1.FK_Indicador_Tipo" FromRole="Tipo" ToRole="Indicador" />
+        </EntityType>
+        <Association Name="FK_Objetivo_CMI">
+          <End Type="Model1.CMI" Role="CMI" Multiplicity="1" />
+          <End Type="Model1.Objetivo" Role="Objetivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Objetivo">
+              <PropertyRef Name="CMI_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Dato_Indicador">
+          <End Type="Model1.Indicador" Role="Indicador" Multiplicity="1" />
+          <End Type="Model1.Indicador_Dato" Role="Indicador_Dato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Indicador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicador_Dato">
+              <PropertyRef Name="Indicador_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Objetivo">
+          <End Type="Model1.Objetivo" Role="Objetivo" Multiplicity="1" />
+          <End Type="Model1.Indicador" Role="Indicador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Objetivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Indicador">
+              <PropertyRef Name="Objetivo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meta_Indicador">
+          <End Type="Model1.Indicador" Role="Indicador" Multiplicity="1" />
+          <End Type="Model1.Meta" Role="Meta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Indicador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Meta">
+              <PropertyRef Name="Indicador_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Indicador_Tipo">
+          <End Type="Model1.Tipo" Role="Tipo" Multiplicity="1" />
+          <End Type="Model1.Indicador" Role="Indicador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="Tipo_Id" />
+            </Principal>
+            <Dependent Role="Indicador">
+              <PropertyRef Name="Tipo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Objetivo_Perspectiva">
+          <End Type="Model1.Perspectiva" Role="Perspectiva" Multiplicity="1" />
+          <End Type="Model1.Objetivo" Role="Objetivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perspectiva">
+              <PropertyRef Name="Perspectiva_Id" />
+            </Principal>
+            <Dependent Role="Objetivo">
+              <PropertyRef Name="Perspectiva_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Actividades_Empleados">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Actividades_Empleados)">
+        <MappingFragment StoreEntitySet="Actividades_Empleados">
+          <ScalarProperty Name="Actividad_ID" ColumnName="Actividad_ID" />
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check_in_Out">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Check_in_Out)">
+        <MappingFragment StoreEntitySet="Check_in_Out">
+          <ScalarProperty Name="Check_in_Out_ID" ColumnName="Check_in_Out_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Fecha_Check_in" ColumnName="Fecha_Check_in" />
+          <ScalarProperty Name="Fecha_Check_out" ColumnName="Fecha_Check_out" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Clientes)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Tipo_Cliente" ColumnName="Tipo_Cliente" />
+          <ScalarProperty Name="Metodo_Reservacion" ColumnName="Metodo_Reservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentarios_Valoraciones_Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Comentarios_Valoraciones_Clientes)">
+        <MappingFragment StoreEntitySet="Comentarios_Valoraciones_Clientes">
+          <ScalarProperty Name="Comentario_ID" ColumnName="Comentario_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras_Servicios_Adicionales">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Compras_Servicios_Adicionales)">
+        <MappingFragment StoreEntitySet="Compras_Servicios_Adicionales">
+          <ScalarProperty Name="Compra_Servicio_ID" ColumnName="Compra_Servicio_ID" />
+          <ScalarProperty Name="Reservacion_ID" ColumnName="Reservacion_ID" />
+          <ScalarProperty Name="Servicio_ID" ColumnName="Servicio_ID" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleados">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Empleados)">
+        <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eventos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Eventos)">
+        <MappingFragment StoreEntitySet="Eventos">
+          <ScalarProperty Name="Evento_ID" ColumnName="Evento_ID" />
+          <ScalarProperty Name="Nombre_Evento" ColumnName="Nombre_Evento" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Facturas)">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="Factura_ID" ColumnName="Factura_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Factura" ColumnName="Fecha_Factura" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Habitaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Habitaciones)">
+        <MappingFragment StoreEntitySet="Habitaciones">
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Tipo_Habitacion" ColumnName="Tipo_Habitacion" />
+          <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+          <ScalarProperty Name="Precio_Noche" ColumnName="Precio_Noche" />
+          <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Intermediarios">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Intermediarios)">
+        <MappingFragment StoreEntitySet="Intermediarios">
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tipo_Intermediario" ColumnName="Tipo_Intermediario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paquetes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Paquetes)">
+        <MappingFragment StoreEntitySet="Paquetes">
+          <ScalarProperty Name="Paquete_ID" ColumnName="Paquete_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Productos)">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Producto_ID" ColumnName="Producto_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promociones">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Promociones)">
+        <MappingFragment StoreEntitySet="Promociones">
+          <ScalarProperty Name="Promocion_ID" ColumnName="Promocion_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Acceso_Hotel">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Registros_Acceso_Hotel)">
+        <MappingFragment StoreEntitySet="Registros_Acceso_Hotel">
+          <ScalarProperty Name="Registro_Acceso_ID" ColumnName="Registro_Acceso_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora_Acceso" ColumnName="Fecha_Hora_Acceso" />
+          <ScalarProperty Name="Tipo_Acceso" ColumnName="Tipo_Acceso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Actividad_Cliente">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Registros_Actividad_Cliente)">
+        <MappingFragment StoreEntitySet="Registros_Actividad_Cliente">
+          <ScalarProperty Name="Registro_ID" ColumnName="Registro_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registros_Actividad_Intermediario">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Registros_Actividad_Intermediario)">
+        <MappingFragment StoreEntitySet="Registros_Actividad_Intermediario">
+          <ScalarProperty Name="Registro_Intermediario_ID" ColumnName="Registro_Intermediario_ID" />
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Fecha_Hora_Actividad" ColumnName="Fecha_Hora_Actividad" />
+          <ScalarProperty Name="Tipo_Actividad" ColumnName="Tipo_Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Reservaciones)">
+        <MappingFragment StoreEntitySet="Reservaciones">
+          <ScalarProperty Name="Reservacion_ID" ColumnName="Reservacion_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Paquete_ID" ColumnName="Paquete_ID" />
+          <ScalarProperty Name="Habitacion_ID" ColumnName="Habitacion_ID" />
+          <ScalarProperty Name="Intermediario_ID" ColumnName="Intermediario_ID" />
+          <ScalarProperty Name="Fecha_Reservacion" ColumnName="Fecha_Reservacion" />
+          <ScalarProperty Name="Metodo_Pago" ColumnName="Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios_Adicionales">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Servicios_Adicionales)">
+        <MappingFragment StoreEntitySet="Servicios_Adicionales">
+          <ScalarProperty Name="Servicio_ID" ColumnName="Servicio_ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios_Comida_Bebida">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Servicios_Comida_Bebida)">
+        <MappingFragment StoreEntitySet="Servicios_Comida_Bebida">
+          <ScalarProperty Name="Servicio_Comida_Bebida_ID" ColumnName="Servicio_Comida_Bebida_ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Producto_ID" ColumnName="Producto_ID" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transacciones_Financieras">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Transacciones_Financieras)">
+        <MappingFragment StoreEntitySet="Transacciones_Financieras">
+          <ScalarProperty Name="Transaccion_ID" ColumnName="Transaccion_ID" />
+          <ScalarProperty Name="Tipo_Transaccion" ColumnName="Tipo_Transaccion" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="Metodo_Pago" ColumnName="Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="CMIs">
+            <EntityTypeMapping TypeName="Model1.CMI">
+              <MappingFragment StoreEntitySet="CMI">
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Indicadors">
+            <EntityTypeMapping TypeName="Model1.Indicador">
+              <MappingFragment StoreEntitySet="Indicador">
+                <ScalarProperty Name="Tipo_Id" ColumnName="Tipo_Id" />
+                <ScalarProperty Name="Objetivo_Id" ColumnName="Objetivo_Id" />
+                <ScalarProperty Name="Unidad_Medida" ColumnName="Unidad_Medida" />
+                <ScalarProperty Name="Frecuencia_Medida" ColumnName="Frecuencia_Medida" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Indicador_Dato">
+            <EntityTypeMapping TypeName="Model1.Indicador_Dato">
+              <MappingFragment StoreEntitySet="Indicador_Dato">
+                <ScalarProperty Name="Indicador_Id" ColumnName="Indicador_Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Metas">
+            <EntityTypeMapping TypeName="Model1.Meta">
+              <MappingFragment StoreEntitySet="Meta">
+                <ScalarProperty Name="Indicador_Id" ColumnName="Indicador_Id" />
+                <ScalarProperty Name="Fecha_limite" ColumnName="Fecha_limite" />
+                <ScalarProperty Name="Valor_esperado" ColumnName="Valor_esperado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Objetivoes">
+            <EntityTypeMapping TypeName="Model1.Objetivo">
+              <MappingFragment StoreEntitySet="Objetivo">
+                <ScalarProperty Name="Perspectiva_Id" ColumnName="Perspectiva_Id" />
+                <ScalarProperty Name="CMI_Id" ColumnName="CMI_Id" />
+                <ScalarProperty Name="Ponderacion" ColumnName="Ponderacion" />
+                <ScalarProperty Name="Metrica" ColumnName="Metrica" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perspectivas">
+            <EntityTypeMapping TypeName="Model1.Perspectiva">
+              <MappingFragment StoreEntitySet="Perspectiva">
+                <ScalarProperty Name="Perspectiva_Id" ColumnName="Perspectiva_Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipoes">
+            <EntityTypeMapping TypeName="Model1.Tipo">
+              <MappingFragment StoreEntitySet="Tipo">
+                <ScalarProperty Name="Tipo_Id" ColumnName="Tipo_Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

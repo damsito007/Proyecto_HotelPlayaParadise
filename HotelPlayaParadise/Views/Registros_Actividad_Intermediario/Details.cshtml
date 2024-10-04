@@ -1,0 +1,58 @@
+﻿@model HotelPlayaParadise.Models.Registros_Actividad_Intermediario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Registros_Actividad_Intermediario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Rol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Hora_Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Hora_Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleados.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleados.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Intermediarios.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Intermediarios.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Registro_Intermediario_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

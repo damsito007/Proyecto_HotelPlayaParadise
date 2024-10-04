@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/cards.css" />
+</head>
+<body>
+    <div id="" style="background-color: #f0f0f0; border-radius: 8px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
+        <h3 style="margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #ccc;">Estadísticas Generales</h3>
+
+        <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <div style="flex: 1;">
+                <p style="margin: 0; font-size: 18px;"><strong>Número de Habitaciones:</strong></p>
+                <p style="margin: 0; font-size: 24px; font-weight: bold; color: #4CAF50;">20</p>
+            </div>
+            <div style="flex: 1;">
+                <p style="margin: 0; font-size: 18px;"><strong>Número de Clientes:</strong></p>
+                <p style="margin: 0; font-size: 24px; font-weight: bold; color: #2196F3;">20</p>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+            <div style="flex: 1;">
+                <p style="margin: 0; font-size: 18px;"><strong>Número de Intermediarios:</strong></p>
+                <p style="margin: 0; font-size: 24px; font-weight: bold; color: #FF9800;">20</p>
+            </div>
+            <div style="flex: 1;">
+                <p style="margin: 0; font-size: 18px;"><strong>Número de Paquetes:</strong></p>
+                <p style="margin: 0; font-size: 24px; font-weight: bold; color: #F44336;">20</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pie-nacionalidad" style="width: 100%; height: 400px;"></div>
+    <div id="bar-paquete" style="width: 100%; height: 400px;"></div>
+    <div id="bar-metodo-pago" style="width: 100%; height: 400px;"></div>
+    <div id="bar-capacidad" style="width: 100%; height: 400px;"></div>
+    <div id="bar-precio-tipo-habitacion" style="width: 100%; height: 400px;"></div>
+    <div id="bar-intermediario" style="width: 100%; height: 400px;"></div>
+    <div id="bar-ingresos-paquete" style="width: 100%; height: 400px;"></div>
+
+    <script src="~/js/dashboardscript.js"></script>
+</body>
+</html>
+
+
+

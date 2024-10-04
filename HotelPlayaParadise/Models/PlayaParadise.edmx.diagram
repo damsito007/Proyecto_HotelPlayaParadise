@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="55636fa84de6430485e20e203b4e0066" Name="Diagram1" ZoomLevel="106" >
+        <EntityTypeShape EntityType="Model1.Actividades_Empleados" Width="1.5" PointX="8" PointY="2.75" />
+        <EntityTypeShape EntityType="Model1.Check_in_Out" Width="1.5" PointX="3" PointY="10.875" />
+        <EntityTypeShape EntityType="Model1.Clientes" Width="1.5" PointX="0.75" PointY="10.375" />
+        <EntityTypeShape EntityType="Model1.Comentarios_Valoraciones_Clientes" Width="1.5" PointX="3" PointY="22.75" />
+        <EntityTypeShape EntityType="Model1.Compras_Servicios_Adicionales" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="Model1.Empleados" Width="1.5" PointX="5.75" PointY="2.625" />
+        <EntityTypeShape EntityType="Model1.Eventos" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model1.Facturas" Width="1.5" PointX="3" PointY="20" />
+        <EntityTypeShape EntityType="Model1.Habitaciones" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="Model1.Intermediarios" Width="1.5" PointX="0.75" PointY="17.5" />
+        <EntityTypeShape EntityType="Model1.Paquetes" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model1.Productos" Width="1.5" PointX="3.75" PointY="4.375" />
+        <EntityTypeShape EntityType="Model1.Promociones" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model1.Registros_Acceso_Hotel" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="Model1.Registros_Actividad_Cliente" Width="1.5" PointX="3" PointY="25.5" />
+        <EntityTypeShape EntityType="Model1.Registros_Actividad_Intermediario" Width="1.5" PointX="9" PointY="9.75" />
+        <EntityTypeShape EntityType="Model1.Reservaciones" Width="1.5" PointX="3" PointY="14.375" />
+        <EntityTypeShape EntityType="Model1.Servicios_Adicionales" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="Model1.Servicios_Comida_Bebida" Width="1.5" PointX="6" PointY="10.875" />
+        <EntityTypeShape EntityType="Model1.Transacciones_Financieras" Width="1.5" PointX="9.75" PointY="5.75" />
+        <AssociationConnector Association="Model1.FK__Actividad__Emple__5BE2A6F2" />
+        <AssociationConnector Association="Model1.FK__Check_in___Clien__5535A963" />
+        <AssociationConnector Association="Model1.FK__Check_in___Habit__5629CD9C" />
+        <AssociationConnector Association="Model1.FK__Comentari__Clien__6B24EA82" />
+        <AssociationConnector Association="Model1.FK__Facturas__Client__59063A47" />
+        <AssociationConnector Association="Model1.FK__Registros__Clien__6477ECF3" />
+        <AssociationConnector Association="Model1.FK__Registros__Clien__778AC167" />
+        <AssociationConnector Association="Model1.FK__Reservaci__Clien__5EBF139D" />
+        <AssociationConnector Association="Model1.FK__Servicios__Clien__02084FDA" />
+        <AssociationConnector Association="Model1.FK__Compras_S__Reser__73BA3083" />
+        <AssociationConnector Association="Model1.FK__Compras_S__Servi__74AE54BC" />
+        <AssociationConnector Association="Model1.FK__Registros__Emple__68487DD7" />
+        <AssociationConnector Association="Model1.FK__Reservaci__Habit__60A75C0F" />
+        <AssociationConnector Association="Model1.FK__Registros__Inter__6754599E" />
+        <AssociationConnector Association="Model1.FK__Reservaci__Inter__619B8048" />
+        <AssociationConnector Association="Model1.FK__Reservaci__Paque__5FB337D6" />
+        <AssociationConnector Association="Model1.FK__Servicios__Produ__02FC7413" />
+        <EntityTypeShape EntityType="Model1.CMI" Width="1.5" PointX="11.375" PointY="13.375" />
+        <EntityTypeShape EntityType="Model1.Indicador" Width="1.5" PointX="15.875" PointY="9.875" />
+        <EntityTypeShape EntityType="Model1.Indicador_Dato" Width="1.5" PointX="18.125" PointY="11.75" />
+        <EntityTypeShape EntityType="Model1.Meta" Width="1.5" PointX="18.125" PointY="9" />
+        <EntityTypeShape EntityType="Model1.Objetivo" Width="1.5" PointX="13.625" PointY="10.125" />
+        <EntityTypeShape EntityType="Model1.Perspectiva" Width="1.5" PointX="11.375" PointY="10.5" />
+        <EntityTypeShape EntityType="Model1.Tipo" Width="1.5" PointX="13.625" PointY="7.5" />
+        <AssociationConnector Association="Model1.FK_Objetivo_CMI" />
+        <AssociationConnector Association="Model1.FK_Indicador_Dato_Indicador" />
+        <AssociationConnector Association="Model1.FK_Indicador_Objetivo" />
+        <AssociationConnector Association="Model1.FK_Meta_Indicador" />
+        <AssociationConnector Association="Model1.FK_Indicador_Tipo" />
+        <AssociationConnector Association="Model1.FK_Objetivo_Perspectiva" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

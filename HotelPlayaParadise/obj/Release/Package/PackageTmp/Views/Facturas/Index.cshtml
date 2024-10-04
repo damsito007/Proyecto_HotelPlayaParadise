@@ -1,0 +1,54 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Facturas>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+<div style="margin-top:1000px;">
+    <h2>Listado de Facturas</h2>
+
+    <link rel="stylesheet" href="~/css/StyleLink.css">
+    <link rel="stylesheet" href="~/css/StyleTables.css">
+    <link rel="stylesheet" href="~/css/StyleSummitButton.css">
+
+    <a href="@Url.Action("Create", "Facturas")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+        Crear Nuevo
+    </a>
+    <table class="styled-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Factura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clientes.Nombre)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Factura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clientes.Nombre)
+                </td>
+                <td>
+                    @Html.ActionButton("Editar", "Edit", "Facturas", new { id = item.Factura_ID }, new { @class = "btnC" }) |
+                    <a href="@Url.Action("Details", "Facturas", new { id = item.Factura_ID })" class="btngreen" style="text-decoration: none; color:green">
+                        Detalles
+                    </a> |
+                    @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                    @Html.ActionButton("Eliminar", "Delete", "Facturas", new { id = item.Factura_ID }, new { @class = "btnD" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

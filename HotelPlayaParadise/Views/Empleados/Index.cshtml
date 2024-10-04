@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Empleados>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+<div style="margin-top:1000px;">
+    <h2>Listado de Empleado</h2>
+    <link rel="stylesheet" href="~/css/StyleLink.css">
+    <link rel="stylesheet" href="~/css/StyleTables.css">
+    <link rel="stylesheet" href="~/css/StyleSummitButton.css">
+
+    <a href="@Url.Action("Create", "Empleados")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+        Crear Nuevo
+    </a>
+    <table class="styled-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Puesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Puesto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
+                <td>
+                    @Html.ActionButton("Editar", "Edit", "Empleados", new { id = item.Empleado_ID }, new { @class = "btnC" }) |
+                    <a href="@Url.Action("Details", "Empleados", new { id = item.Empleado_ID })" class="btngreen" style="text-decoration: none; color:green">
+                        Detalles
+                    </a> |
+                    @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                    @Html.ActionButton("Eliminar", "Delete", "Empleados", new { id = item.Empleado_ID }, new { @class = "btnD" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

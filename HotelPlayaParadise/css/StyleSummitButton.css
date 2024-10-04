@@ -1,0 +1,313 @@
+﻿.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+    .cta:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #b1dae7;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+    }
+
+    .cta span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #234567;
+    }
+
+    .cta svg {
+        position: relative;
+        top: -2px;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #234567;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+    }
+
+    .cta:hover:before {
+        width: 100%;
+        background: #b1dae7;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active {
+        transform: scale(0.95);
+    }
+
+.btngreen {
+    padding: 0.7rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: forestgreen; /* Cambiado a verde */
+    border-radius: .5rem;
+    border-bottom: 2px solid forestgreen; /* Cambiado a verde */
+    border-right: 2px solid forestgreen; /* Cambiado a verde */
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+
+    .btngreen:hover {
+        border-top: 2px solid forestgreen; /* Cambiado a verde */
+        border-left: 2px solid forestgreen; /* Cambiado a verde */
+        border-bottom: 2px solid forestgreen; /* Cambiado a verde */
+        border-right: 2px solid forestgreen; /* Cambiado a verde */
+        box-shadow: rgba(34, 139, 34, 0.4) 5px 5px, rgba(34, 139, 34, 0.3) 10px 10px, rgba(34, 139, 34, 0.2) 15px 15px; /* Cambiado a verde */
+    }
+
+.Btnback {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(163, 142, 255);
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sign svg {
+        width: 17px;
+    }
+
+        .sign svg path {
+            fill: white;
+        }
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btnback:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+    .Btnback:hover .sign {
+        width: 30%;
+        transition-duration: .3s;
+        padding-left: 20px;
+    }
+    /* hover effect button's text */
+    .Btnback:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+    }
+/* button click effect*/
+.Btnback:active {
+    transform: translate(2px,2px);
+}
+
+
+.btnC {
+    padding: 0.7rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: dodgerblue; /* Cambiado a azul celeste */
+    border-radius: .5rem;
+    border-bottom: 2px solid dodgerblue; /* Cambiado a azul celeste */
+    border-right: 2px solid dodgerblue; /* Cambiado a azul celeste */
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+
+    .btnC:hover {
+        border-top: 2px solid dodgerblue; /* Cambiado a azul celeste */
+        border-left: 2px solid dodgerblue; /* Cambiado a azul celeste */
+        border-bottom: 2px solid dodgerblue; /* Cambiado a azul celeste */
+        border-right: 2px solid dodgerblue; /* Cambiado a azul celeste */
+        box-shadow: rgba(30, 144, 255, 0.4) 5px 5px, rgba(30, 144, 255, 0.3) 10px 10px, rgba(30, 144, 255, 0.2) 15px 15px; /* Cambiado a azul celeste */
+    }
+
+
+.btnD {
+    padding: 0.7rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: crimson; /* Cambiado a rojo */
+    border-radius: .5rem;
+    border-bottom: 2px solid crimson; /* Cambiado a rojo */
+    border-right: 2px solid crimson; /* Cambiado a rojo */
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+
+    .btnD:hover {
+        border-top: 2px solid crimson; /* Cambiado a rojo */
+        border-left: 2px solid crimson; /* Cambiado a rojo */
+        border-bottom: 2px solid crimson; /* Cambiado a rojo */
+        border-right: 2px solid crimson; /* Cambiado a rojo */
+        box-shadow: rgba(220, 20, 60, 0.4) 5px 5px, rgba(220, 20, 60, 0.3) 10px 10px, rgba(220, 20, 60, 0.2) 15px 15px; /* Cambiado a rojo */
+    }
+
+.btnG {
+    padding: 0.7rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: gray; /* Cambiado a gris */
+    border-radius: .5rem;
+    border-bottom: 2px solid gray; /* Cambiado a gris */
+    border-right: 2px solid gray; /* Cambiado a gris */
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+
+    .btnG:hover {
+        border-top: 2px solid gray; /* Cambiado a gris */
+        border-left: 2px solid gray; /* Cambiado a gris */
+        border-bottom: 2px solid darkgray; /* Cambiado a gris */
+        border-right: 2px solid darkgray; /* Cambiado a gris */
+        box-shadow: rgba(128, 128, 128, 0.4) 5px 5px, rgba(128, 128, 128, 0.3) 10px 10px, rgba(128, 128, 128, 0.2) 15px 15px; /* Cambiado a gris */
+    }
+
+.btnM {
+    padding: 0.7rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: rebeccapurple; /* Cambiado a morado */
+    border-radius: .5rem;
+    border-bottom: 2px solid rebeccapurple; /* Cambiado a morado */
+    border-right: 2px solid rebeccapurple; /* Cambiado a morado */
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+}
+
+    .btnM:hover {
+        border-top: 2px solid rebeccapurple; /* Cambiado a morado */
+        border-left: 2px solid rebeccapurple; /* Cambiado a morado */
+        border-bottom: 2px solid rebeccapurple; /* Cambiado a morado */
+        border-right: 2px solid rebeccapurple; /* Cambiado a morado */
+        box-shadow: rgba(102, 51, 153, 0.4) 5px 5px, rgba(102, 51, 153, 0.3) 10px 10px, rgba(102, 51, 153, 0.2) 15px 15px; /* Cambiado a morado */
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    background: #3586ff;
+    overflow: hidden;/* Espaciado uniforme entre los elementos */
+}
+
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../img/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 100;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+    section .wave.wave2 {
+        animation: animate2 15s linear infinite;
+        z-index: 999;
+        opacity: 0.5;
+        animation-delay: -5s;
+        bottom: 10px;
+    }
+
+    section .wave.wave3 {
+        animation: animate 30s linear infinite;
+        z-index: 998;
+        opacity: 0.2;
+        animation-delay: -2s;
+        bottom: 15px;
+    }
+
+    section .wave.wave4{
+        animation: animate2 5s linear infinite;
+        z-index: 997;
+        opacity: 0.7;
+        animation-delay: -5s;
+        bottom: 20px;
+    }
+
+@keyframes animate{
+    0%{
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
+}
+

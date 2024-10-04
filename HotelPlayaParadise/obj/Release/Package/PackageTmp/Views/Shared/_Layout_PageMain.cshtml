@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewBag.Title - Hotel Playa Paradise</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/javascript")
+    @Scripts.Render("~/bundles/scripts")
+
+    <script src="Scripts/scripts.js" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/StyleModeIcon.css">
+    <link rel="stylesheet" href="~/css/StyleMode.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body class="sb-nav-fixed light-mode">
+    <style>
+        .navbar-custom {
+            background-color: #1358ab; /* Celeste-NavBar */
+            padding: 10px 20px;
+        }
+
+            .navbar-custom .nav-link {
+                color: white; /* Texto negro */
+                font-size: 16px;
+            }
+            .navbar-custom .navbar-brand:hover {
+                color: black; /* Texto dorado al pasar el cursor */
+            }
+
+            .navbar-custom .nav-link:hover {
+                color: black; /* Texto dorado al pasar el cursor */
+            }
+    </style>
+    <nav class="sb-topnav navbar navbar-expand navbar-custom">
+        <style>
+            .navbar-brand {
+                font-size: 20px;
+                color: white;
+            }
+        </style>
+        <i class="material-icons" style="color:white;">beach_access</i>
+        <a class="navbar-brand ps-3" href="index.html" style="font-size: 20px; color:white">Hotel Playa Paradise</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <style>
+                .icon {
+                    transition: color 0.3s ease; /* Animación suave para el cambio de color */
+                }
+
+                    .icon:hover {
+                        color: rgb(89, 138, 99); /* Cambia el color a negro al pasar el cursor */
+                    }
+            </style>
+            <i class="fas fa-bars icon" style="color:white"></i>
+        </button>
+        <!-- Navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu" style="background-color: #3673c5" >
+                    <div class="nav">
+                        <style>
+                            .sb-sidenav-dark .sb-sidenav-menu .nav-link {
+                                color: white;
+                            }
+                                .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+                                    color: black; /* Color diferente al negro al pasar el mouse */
+                                }
+                        </style>
+                        <div class="nav-link" style="color:white">
+                            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                            <i class="fas fa-tachometer-alt nav-icon" style="color:white"></i>
+                                @Html.ActionLink("Dashboard", "Index", "dashboard", new { area = "" }, new { @class = "nav-link" }) 
+                        </div>
+                        <div class="nav-link">
+                            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                            <i class="fas fa-tachometer-alt nav-icon"></i>
+                            @Html.ActionLink("Eda", "Index", "EdaDashboard", new { area = "" }, new { @class = "nav-link" })
+                        </div>
+                        <div class="nav-link">
+                            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                            <i class="fas fa-tachometer-alt nav-icon"></i>
+                            @Html.ActionLink("Indicador de Crecimiento", "Index", "IndicadorCrecimiento", new { area = "" }, new { @class = "nav-link" })
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns" style="color:white"></i></div>
+                            Sección CMI
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="color:white"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <!--<a class="nav-link" href="layout-static.html">Recepcionista</a>-->
+                                @Html.ActionLink("CMI", "Index", "CMIs", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Perspectiva", "Index", "Perspectivas", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Objetivo", "Index", "Objetivos", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Tipo de Indicador", "Index", "Tipoes", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Indicador", "Index", "Indicadors", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Dato del Indicador", "Index", "Indicador_Dato", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Meta", "Index", "Metas", new { area = "" }, new { @class = "nav-link" })
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCatalogs" aria-expanded="false" aria-controls="collapseCatalogs">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns" style="color:white"></i></div>
+                            Catálogos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="color:white"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseCatalogs" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <!--<a class="nav-link" href="layout-static.html">Recepcionista</a>-->
+                                @Html.ActionLink("Cliente", "Index", "Clientes", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Empleado", "Index", "Empleados", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Intermediario", "Index", "Intermediarios", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Habitación", "Index", "Habitaciones", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Servicios Adicionales", "Index", "Servicios_Adicionales", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Consumibles", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Promoción", "Index", "Promociones", new { area = "" }, new { @class = "nav-link" })
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open" style="color:white"></i></div>
+                            Gestiones
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down" style="color:white"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                @Html.ActionLink("Reservación", "Index", "Reservaciones", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Transacciones Financieras", "Index", "Transacciones_Financieras", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Facturas", "Index", "Facturas", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Evento", "Index", "Eventos", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Producto", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })
+                            </nav>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer" style="background-color: #1358ab ">
+                    <div class="toggle-switch">
+                        <label class="switch-label">
+                            <input type="checkbox" class="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                @RenderBody()
+            </main>
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

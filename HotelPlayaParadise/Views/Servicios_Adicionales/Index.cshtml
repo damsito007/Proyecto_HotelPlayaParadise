@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Servicios_Adicionales>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>Servicios Adicionales</h2>
+
+    <link rel="stylesheet" href="~/css/StyleLink.css">
+    <link rel="stylesheet" href="~/css/StyleTables.css">
+    <link rel="stylesheet" href="~/css/StyleSummitButton.css">
+
+    <a href="@Url.Action("Create", "Servicios_Adicionales")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+        Crear Nuevo
+    </a>
+    <table class="styled-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.ActionButton("Editar", "Edit", "Servicios_Adicionales", new { id = item.Servicio_ID }, new { @class = "btnC" }) |
+                    <a href="@Url.Action("Details", "Servicios_Adicionales", new { id = item.Servicio_ID })" class="btngreen" style="text-decoration: none; color:green">
+                        Detalles
+                    </a> |
+                    @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                    @Html.ActionButton("Eliminar", "Delete", "Servicios_Adicionales", new { id = item.Servicio_ID }, new { @class = "btnD" })
+                </td>
+            </tr>
+        }
+
+    </table>

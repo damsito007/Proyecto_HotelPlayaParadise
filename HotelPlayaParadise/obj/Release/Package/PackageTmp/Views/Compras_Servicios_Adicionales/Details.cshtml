@@ -1,0 +1,50 @@
+﻿@model HotelPlayaParadise.Models.Compras_Servicios_Adicionales
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compras_Servicios_Adicionales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservaciones.Metodo_Pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservaciones.Metodo_Pago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servicios_Adicionales.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servicios_Adicionales.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Compra_Servicio_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

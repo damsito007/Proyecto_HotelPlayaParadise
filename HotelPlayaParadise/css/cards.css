@@ -1,0 +1,41 @@
+﻿.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+    .card h4 {
+        margin-top: 0;
+    }
+
+.card-habitaciones {
+    background-color: #f1c40f; /* Amarillo */
+    color: #fff;
+}
+
+.card-clientes {
+    background-color: #e74c3c; /* Rojo */
+    color: #fff;
+}
+
+.card-intermediarios {
+    background-color: #3498db; /* Azul */
+    color: #fff;
+}
+
+.card-paquetes {
+    background-color: #2ecc71; /* Verde */
+    color: #fff;
+}
+

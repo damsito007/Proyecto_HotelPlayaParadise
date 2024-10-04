@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Model1Container-Web.config Connection String" description="Model1Container Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.PlayaParadise.csdl|res://*/Models.PlayaParadise.ssdl|res://*/Models.PlayaParadise.msl;provider=System.Data.SqlClient;provider connection string=&quot;Server=tcp:basededatosql.database.windows.net,1433;Initial Catalog=BaseDatosSQL;Persist Security Info=False;User ID=Diego;Password=Dams21072003;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Diego\\Desktop\\AppPlayaParadise\\HotelPlayaParadise\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Model1Container']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,16 @@
+﻿/* Estilos para el icono */
+#toggle-mode {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para el icono del sol */
+#icon.fa-sun:before {
+    content: "\f185"; /* Código del icono del sol de Font Awesome */
+}
+
+/* Estilos para el icono de la luna */
+#icon.fa-moon:before {
+    content: "\f186"; /* Código del icono de la luna de Font Awesome */
+}

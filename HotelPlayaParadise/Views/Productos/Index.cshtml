@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HotelPlayaParadise.Models.Productos>
+@using HotelPlayaParadise.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Productos</h2>
+
+<link rel="stylesheet" href="~/css/StyleLink.css">
+<link rel="stylesheet" href="~/css/StyleTables.css">
+<link rel="stylesheet" href="~/css/StyleSummitButton.css">
+<a href="@Url.Action("Create", "Productos")" class="btnG" style="text-decoration: none; color:gray; margin-top:15px">
+    Crear Nuevo
+</a>
+<table class="styled-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripción)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Descripción)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </th>
+            <td>
+                @Html.ActionButton("Editar", "Edit", "Productos", new { id = item.Producto_ID }, new { @class = "btnC" }) |
+                <a href="@Url.Action("Details", "Productos", new { id = item.Producto_ID })" class="btngreen" style="text-decoration: none; color:green">
+                    Detalles
+                </a> |
+                @*@Html.ActionButton("Detalles", "Details", "CMIs", new { id = item.Id }, new { @class = "btn" })*@
+                @Html.ActionButton("Eliminar", "Delete", "Productos", new { id = item.Producto_ID }, new { @class = "btnD" })
+            </td>
+        </tr>
+    }
+
+</table>
